@@ -6,13 +6,14 @@ import * as eventsTargets from 'aws-cdk-lib/aws-events-targets';
 import * as sqs from 'aws-cdk-lib/aws-sqs';
 import * as lambdaEventSources from 'aws-cdk-lib/aws-lambda-event-sources';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import * as lambdaNode from 'aws-cdk-lib/aws-lambda-nodejs';
 
 export class EventBridgeFanoutStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // Producer Lambda
-    const producerLambda = new lambda.Function(this, 'ProducerLambda', {
+    const producerLambda = new lambdaNode.NodejsFunction(this, 'ProducerLambda', {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: 'index.handler',
       code: lambda.Code.fromAsset('../../src/producer-lambda'),
@@ -35,7 +36,7 @@ export class EventBridgeFanoutStack extends cdk.Stack {
     for (const service of services) {
       const queue = new sqs.Queue(this, `${service}Queue`);
 
-      const consumerLambda = new lambda.Function(this, `${service}ConsumerLambda`, {
+      const consumerLambda = new lambdaNode.NodejsFunction(this, `${service}ConsumerLambda`, {
         runtime: lambda.Runtime.NODEJS_18_X,
         handler: 'index.handler',
         code: lambda.Code.fromAsset(`../../src/consumer-lambdas/${service}`),

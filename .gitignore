@@ -42,3 +42,5 @@ pattern-1-eventbridge-fanout/dist/**/*
 yarn.lock
 pattern-1-eventbridge-fanout/dist/infra/cdk/bin/app.js
 pattern-1-eventbridge-fanout/dist/infra/cdk/lib/eventbridge-fanout-stack.js
+pattern-1-eventbridge-fanout/dist/infra/cdk/bin/app.js
+pattern-1-eventbridge-fanout/dist/infra/cdk/lib/eventbridge-fanout-stack.js
