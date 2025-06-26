@@ -36,6 +36,9 @@ Thumbs.db
 
 # Ignore built ts files
 dist/**/*
+pattern-1-eventbridge-fanout/dist/**/*
 
 # ignore yarn.lock
 yarn.lock
+pattern-1-eventbridge-fanout/dist/infra/cdk/bin/app.js
+pattern-1-eventbridge-fanout/dist/infra/cdk/lib/eventbridge-fanout-stack.js
