@@ -1,0 +1,23 @@
+{
+  "name": "eventbridge-fanout-pattern",
+  "version": "1.0.0",
+  "description": "Event-driven fan-out example using AWS CDK, Lambda, EventBridge, and SQS",
+  "main": "infra/cdk/bin/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "cdk": "cdk",
+    "deploy": "npm run build && cdk deploy",
+    "synth": "npm run build && cdk synth",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "aws-cdk": "^2.130.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.130.0",
+    "constructs": "^10.0.0",
+    "@aws-sdk/client-eventbridge": "^3.500.0"
+  }
+} 
