@@ -1,0 +1,8 @@
+type UserProfile {
+  id: ID!
+  email: String!
+}
+
+type Query {
+  getMyProfile: UserProfile
+}
