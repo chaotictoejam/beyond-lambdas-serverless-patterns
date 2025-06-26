@@ -1,0 +1,20 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Order {
+  id: ID!
+  userId: ID!
+  total: Float!
+  status: String!
+}
+
+type Query {
+  getUser(id: ID!): User
+}
+
+type Mutation {
+  placeOrder(userId: ID!, total: Float!): Order
+}
