@@ -36,3 +36,12 @@ You can manually invoke the producer Lambda from the AWS Console or CLI. Example
 ```
 
 This will emit an `OrderPlaced` event, which will be fanned out to all three SQS queues and processed by their respective consumer Lambdas.
+
+## Useful commands
+
+* `npm run build`   compile typescript to js
+* `npm run watch`   watch for changes and compile
+* `npm run test`    perform the jest unit tests
+* `npx cdk deploy`  deploy this stack to your default AWS account/region
+* `npx cdk diff`    compare deployed stack with current state
+* `npx cdk synth`   emits the synthesized CloudFormation template

@@ -3,21 +3,18 @@ import { EventBridgeClient, PutEventsCommand } from '@aws-sdk/client-eventbridge
 const client = new EventBridgeClient({});
 
 exports.handler = async (event: any) => {
-  const orderId = event.orderId || 'example-order-id';
-
-  const command = new PutEventsCommand({
+  const detail = event;
+  const params = {
     Entries: [
       {
-        Source: 'beyond-lambdas.orders',
+        Source: 'custom.orders',
         DetailType: 'OrderPlaced',
-        Detail: JSON.stringify({ orderId }),
-        EventBusName: 'default',
+        Detail: JSON.stringify(detail),
+        EventBusName: process.env.EVENT_BUS_NAME || 'default',
       },
     ],
-  });
-
-  const response = await client.send(command);
-
-  console.log('Event sent:', response);
-  return { statusCode: 200, body: 'OrderPlaced event sent' };
-};
+  };
+  await client.send(new PutEventsCommand(params));
+  console.log('OrderPlaced event sent:', detail);
+  return { statusCode: 200, body: 'Event sent' };
+}; 

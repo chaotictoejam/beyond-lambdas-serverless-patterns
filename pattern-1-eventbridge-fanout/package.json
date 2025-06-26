@@ -1,8 +1,8 @@
 {
-  "name": "pattern-1-eventbridge-fanout",
+  "name": "pattern-1-eventbridge-fanout-2",
   "version": "0.1.0",
   "bin": {
-    "pattern-1-eventbridge-fanout": "bin/app.js"
+    "pattern-1-eventbridge-fanout-2": "bin/pattern-1-eventbridge-fanout-2.js"
   },
   "scripts": {
     "build": "tsc",
@@ -20,13 +20,8 @@
     "typescript": "~5.6.3"
   },
   "dependencies": {
-    "@aws-cdk/aws-events": "^1.203.0",
-    "@aws-cdk/aws-events-targets": "^1.203.0",
-    "@aws-cdk/aws-iam": "^1.203.0",
-    "@aws-cdk/aws-lambda": "^1.203.0",
-    "@aws-cdk/aws-lambda-event-sources": "^1.203.0",
     "@aws-cdk/aws-lambda-nodejs": "^1.203.0",
-    "@aws-cdk/aws-sqs": "^1.203.0",
+    "@aws-sdk/client-eventbridge": "^3.835.0",
     "aws-cdk-lib": "2.201.0",
     "constructs": "^10.0.0",
     "esbuild": "^0.25.5"

@@ -16,7 +16,7 @@ export class EventBridgeFanoutStack extends cdk.Stack {
     const producerLambda = new lambdaNode.NodejsFunction(this, 'ProducerLambda', {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: 'index.handler',
-      code: lambda.Code.fromAsset('../../src/producer-lambda'),
+      code: lambda.Code.fromAsset('src/producer-lambda'),
       environment: {
         EVENT_BUS_NAME: 'default',
       },
@@ -39,7 +39,7 @@ export class EventBridgeFanoutStack extends cdk.Stack {
       const consumerLambda = new lambdaNode.NodejsFunction(this, `${service}ConsumerLambda`, {
         runtime: lambda.Runtime.NODEJS_18_X,
         handler: 'index.handler',
-        code: lambda.Code.fromAsset(`../../src/consumer-lambdas/${service}`),
+        code: lambda.Code.fromAsset(`src/consumer-lambdas/${service}`),
       });
 
       // Connect consumer to queue
