@@ -48,7 +48,7 @@ export class EventBridgeFanoutStack extends cdk.Stack {
       // Add queue as EventBridge target
       const rule = new events.Rule(this, `${service}Rule`, {
         eventPattern: {
-          source: ['myapp.orders'],
+          source: ['custom.orders'],
           detailType: ['OrderPlaced'],
         },
       });

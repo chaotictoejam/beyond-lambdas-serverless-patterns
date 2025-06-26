@@ -1,8 +1,8 @@
 {
-  "name": "pattern-1-eventbridge-fanout-2",
+  "name": "eventbridge-fanout-stack",
   "version": "0.1.0",
   "bin": {
-    "pattern-1-eventbridge-fanout-2": "bin/pattern-1-eventbridge-fanout-2.js"
+    "eventbridge-fanout-stack": "bin/eventbridge-fanout-stack.js"
   },
   "scripts": {
     "build": "tsc",

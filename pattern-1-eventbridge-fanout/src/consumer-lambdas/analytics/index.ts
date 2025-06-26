@@ -1,10 +1,5 @@
 exports.handler = async (event: any) => {
-  for (const record of event.Records) {
-    const body = JSON.parse(record.body);
-    const detail = JSON.parse(body.Detail);
-
-    console.log(`[Analytics Service] Processing order: ${detail.orderId}`);
-  }
+  console.log('[Analytics Service] Processing order');
 
   return {
     statusCode: 200,
